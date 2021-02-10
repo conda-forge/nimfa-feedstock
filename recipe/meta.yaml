@@ -34,6 +34,7 @@ test:
   requires:
     - pip
     - pytest
+    - matplotlib-base
   source_files:
     - nimfa/tests
     - nimfa/datasets
