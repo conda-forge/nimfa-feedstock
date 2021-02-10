@@ -11,7 +11,7 @@ source:
   sha256: 39cff2b86856d03ca8a3d9c38598034ecf1a768c325fd3a728bb9eadb8c6b919
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -30,8 +30,13 @@ test:
     - nimfa.datasets
   commands:
     - pip check
+    - pytest nimfa/tests
   requires:
     - pip
+    - pytest
+  source_files:
+    - nimfa/tests
+    - nimfa/datasets
 
 about:
   home: https://ai.stanford.edu/~marinka/nimfa/
